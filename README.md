@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+  Relational databases are databases that use a relational model for storing data, they are the database itself. SQL and its many flavors/cousins are languages that allows one to query a relational database management system (RBDMS). At its core RBDMS is the software that manages the database and SQL is just the Structured Query Language that you use to interact with it.
+
 - [ ] Why do tables need a `primary key`?
+
+  Primary keys are needed to make sure specific table records are unique, and to relate to other tables as foreign keys.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+  Foreign key
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+  A junction table is needed to allow many to many relationships.
 
 ## Minimum Viable Product
 
