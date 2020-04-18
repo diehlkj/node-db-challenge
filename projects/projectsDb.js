@@ -39,6 +39,9 @@ function findProjectsById(id) {
 function insertProjects(projectData) {
     return db('projects')
         .insert([{ name: projectData.name, description: projectData.description, completed: projectData.completed }])
+        .then(newProject => {
+            return findProjectsById(newProject[0]);
+        })
 }
 
 function findTasks(id) {
@@ -46,9 +49,17 @@ function findTasks(id) {
         .where({ project_id: id })
 }
 
+function findTasksByTaskId(id) {
+    return db('tasks')
+        .where({ id })
+}
+
 function insertTasks(id, taskData) {
     return db('tasks')
         .insert([{ project_id: id, name: taskData.name, notes: taskData.notes, completed: taskData.completed }])
+        .then(newTask => {
+            return findTasksByTaskId(newTask[0]);
+        })
 }
 
 function findResources(id) {
@@ -56,7 +67,15 @@ function findResources(id) {
         .where({ project_id: id })
 }
 
+function findResourcesByResourceId(id) {
+    return db('project_resources')
+        .where({ id })
+}
+
 function insertResources(id, resourceData) {
     return db('project_resources')
         .insert([{ project_id: id, resource_id: resourceData.resource_id }])
+        .then(newResource => {
+            return findResourcesByResourceId(newResource[0]);
+        })
 }

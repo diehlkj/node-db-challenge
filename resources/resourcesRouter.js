@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
             res.status(500).json({ MESSAGE: 'There was a problem with ', err});
         })
 })
-router.get('/', (req, res) => {
+router.post('/', (req, res) => {
     const resourceData = req.body;
 
     Resources.insert(resourceData)
