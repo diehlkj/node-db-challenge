@@ -1,5 +1,3 @@
-const cleaner = require('knex-cleaner');
-
 exports.seed = function(knex) {
   return knex('projects').insert([
     { id: 1, name: 'Node db1', description: 'First db project in node', completed: false },
