@@ -1,6 +1,6 @@
 
 exports.seed = function(knex) {
-  return knex('projects').insert([
+  return knex('resources').insert([
     { id: 1, name: 'Desktop PC', description: 'HeY mAn I coUlDnt HelP buT NotIce YoUR SiCk riG. whAt ya Got IN TheRe, a nVidIa gT 750?' },
     { id: 2, name: 'Desk', description: 'It goes up and dow like brrrrrrrrrrrrrrrrrrrr.' },
     { id: 3, name: 'Chair', description: '' },
