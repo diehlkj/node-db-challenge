@@ -11,3 +11,15 @@ module.exports = {
 // /api/resources/:id
     // put      -- optional
     // delete   -- optional
+
+function find() {
+    return db('resources')
+}
+function findById(id) {
+    return db('resources')
+        .where({ id })
+}
+function insert(resourceData) {
+    return db('resources')
+        .insert([{ name: resourceData.name, description: resourceData.description }])
+}

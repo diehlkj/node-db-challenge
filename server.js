@@ -3,18 +3,19 @@ const express = require('express');
 const helmet = require('helmet');
 
 // import the routes
-// const projectsRouter = require('./projects/projectsRouter.js');
-// const resourcesRouter = require('./resources/resourcesRouter.js');
-// const tasksRouter = require('./tasks/tasksRouter.js');
+const ProjectsRouter = require('./projects/projectsRouter.js');
+const resourcesRouter = require('./resources/resourcesRouter.js');
+const tasksRouter = require('./tasks/tasksRouter.js');
 
 const server = express();
 
 server.use(helmet());
 server.use(express.json());
 server.use(logger);
-// server.use('/api/projects', projectsRouter);
-// server.use('/api/resources', resourcesRouter);
-// server.use('/api/tasks', tasksRouter);
+
+server.use('/api/projects', ProjectsRouter);
+server.use('/api/resources', resourcesRouter);
+server.use('/api/tasks', tasksRouter);
 
 server.get('/', (req, res) => {
     res.send(`<h2>Node DB Sprint Challenge!</h2>`);
